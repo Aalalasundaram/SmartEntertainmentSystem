@@ -1,0 +1,22 @@
+<!-- <span (click)="loadVideo(dataItem.Id)">Load {{ dataItem.Name }}</span>
+
+<div class="video">
+    {{videoSource}}
+</div> -->
+<div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+  </div>
+
+<div class="container-fluid">
+  <div *ngFor = "let movie of moviesList | filter:searchText" >
+    <div class="col-md-3">
+      <div class="card card-primary">
+          <div style="text-align: center;" class="card-heading">{{movie.movieName}}</div>
+          <div class="card-body">
+              <img style="position: relative;" class="img-responsive container-fluid" src{{movie.thumbnailUrl}} >
+          </div>
+          <div style="text-align: center;" class="card-footer"><i class="glyphicon glyphicon-trash"></i> Remove</div>
+      </div>
+    </div>
+  </div>
+</div>
